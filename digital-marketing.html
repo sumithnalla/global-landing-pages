@@ -2,11 +2,18 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
+     <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KNK2QR5Z');</script>
+<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAP FICO Certification Training | Global Coach IT Academy</title>
+    <title>Digital Marketing Certification Program | Global Coach IT Academy</title>
     <meta name="description"
-        content="Master SAP FICO and SAP MM from experts. High-quality training with real-time projects and placement assistance at Global Coach IT Academy.">
+        content="Master Master Digital Marketing from Industry Experts. High-quality training with real-time projects and placement assistance at Global Coach IT Academy.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,12 +72,135 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .headline-band {
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(135deg, rgba(224, 242, 254, 0.98) 0%, rgba(240, 249, 255, 0.96) 48%, #ffffff 100%);
+            border-bottom: 1px solid rgba(14, 165, 233, 0.18);
+        }
+
+        .headline-band::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(14, 165, 233, 0.11) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 165, 233, 0.10) 1px, transparent 1px);
+            background-size: 44px 44px;
+            opacity: 0.55;
+            pointer-events: none;
+        }
+
+        .headline-band::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #00b5fe, transparent);
+            opacity: 0.75;
+        }
+
+        .headline-band > div {
+            position: relative;
+            z-index: 1;
+        }
+
+        .headline-highlight {
+            color: #00b5fe;
+        }
+
 
         /* Logos */
+        .logo-carousel {
+            --logo-gap: clamp(2rem, 5vw, 3.5rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-carousel::before,
+        .logo-carousel::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 2;
+            width: clamp(2rem, 8vw, 6rem);
+            pointer-events: none;
+        }
+
+        .logo-carousel::before {
+            left: 0;
+            background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0));
+        }
+
+        .logo-carousel::after {
+            right: 0;
+            background: linear-gradient(270deg, #ffffff, rgba(255, 255, 255, 0));
+        }
+
+        .logo-carousel-track {
+            display: flex;
+            width: max-content;
+            animation: alumni-logo-scroll 28s linear infinite;
+            will-change: transform;
+        }
+
+        .logo-carousel:hover .logo-carousel-track {
+            animation-play-state: paused;
+        }
+
+        .logo-carousel-set {
+            display: flex;
+            flex: 0 0 auto;
+            align-items: center;
+            gap: var(--logo-gap);
+            padding-right: var(--logo-gap);
+        }
+
         .company-logo {
+            display: block;
+            flex: 0 0 auto;
             max-height: 40px;
             max-width: 120px;
             object-fit: contain;
+        }
+
+        @keyframes alumni-logo-scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .logo-carousel {
+                overflow: visible;
+            }
+
+            .logo-carousel::before,
+            .logo-carousel::after {
+                display: none;
+            }
+
+            .logo-carousel-track {
+                width: 100%;
+                animation: none;
+            }
+
+            .logo-carousel-set {
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+                padding-right: 0;
+            }
+
+            .logo-carousel-set[aria-hidden="true"] {
+                display: none;
+            }
         }
 
         .hero-layout {
@@ -123,13 +253,34 @@
         .hero-form-column {
             min-width: 0;
             width: 100%;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(145deg, rgba(224, 242, 254, 0.92) 0%, rgba(240, 249, 255, 0.96) 45%, rgba(255, 255, 255, 0.98) 100%);
+            border-left: 1px solid rgba(14, 165, 233, 0.14);
+        }
+
+        .hero-form-column::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(14, 165, 233, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 165, 233, 0.08) 1px, transparent 1px);
+            background-size: 36px 36px;
+            opacity: 0.45;
+            pointer-events: none;
         }
 
         .hero-form-panel {
             min-width: 0;
             min-height: 100%;
             width: 100%;
-            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(14, 165, 233, 0.18);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(240, 249, 255, 0.90));
+            box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.24);
             padding: clamp(1.25rem, 2vw, 2.5rem);
         }
 
@@ -474,6 +625,11 @@
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-100 selection:text-primary-900 pt-20"
     x-data="{ showModal: false, showMobileMenu: false }">
 
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNK2QR5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
     <!-- 1. HEADER -->
     <header class="fixed top-0 inset-x-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -522,11 +678,11 @@
     </header>
 
     <!-- 2. MAIN HEADLINE -->
-    <section class="bg-white border-b border-slate-200">
+    <section class="headline-band">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 text-center">
             <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-dark">
-                Get SAP FICO Certified in 90 Days
-                <span class="block sm:inline text-primary-600">&mdash; 100% Placement Assistance</span>
+                Become a Job-Ready Digital Marketer in 90 Days
+                <span class="headline-highlight block sm:inline">&mdash; 100% Placement Assistance</span>
             </h1>
         </div>
     </section>
@@ -537,10 +693,10 @@
             <div class="hero-media relative order-2 overflow-hidden lg:order-1">
         <!-- Image rendered directly and sized per breakpoint. -->
                 <div class="absolute inset-0 h-full w-full overflow-hidden"
-                    x-data="{ activeSlide: 0, slides: ['hero2.jpg', 'hero00.jpeg', 'hero22.jpeg', 'times.jpeg', 'hero2.png', 'hero11.jpeg'] }"
+                    x-data="{ activeSlide: 0, slides: ['hero2.jpg', 'dm-1.jpeg', 'hero22.jpeg', 'times.jpeg', 'hero2.png', 'hero11.jpeg'] }"
                     x-init="setInterval(() => activeSlide = (activeSlide + 1) % slides.length, 2000)">
                     <template x-for="(slide, index) in slides" :key="index">
-                        <img :src="slide" alt="SAP FICO training at Global Coach IT Academy"
+                        <img :src="slide" alt="Digital Marketing training at Global Coach IT Academy"
                             class="hero-media-image absolute inset-0 h-full w-full object-cover"
                             x-show="activeSlide === index"
                             x-transition:enter="transition-transform duration-1000 ease-in-out"
@@ -569,9 +725,9 @@
             </div>
 
             <!-- Booking form on the right side -->
-            <div class="hero-form-column order-1 flex items-stretch bg-white lg:order-2">
+            <div class="hero-form-column order-1 flex items-stretch lg:order-2">
                 <div
-                    class="hero-form-panel flex w-full flex-col justify-center bg-white">
+                    class="hero-form-panel flex w-full flex-col justify-center">
             <div class="flex justify-center mb-3">
                 <span
                     class="bg-white/90 text-primary-700 text-[11px] font-bold px-4 py-1.5 rounded-full shadow-sm uppercase tracking-wider">Limited
@@ -582,9 +738,9 @@
             </p>
 
             <form class="contact-form lead-flow-form space-y-4"
-                action="https://script.google.com/macros/s/AKfycbzBl_a4ratMgU-fQrBxxTf7xIbSgmCbWPEHWXtZEdMGJe_2g0X3lQ9q55k2BKnaYGQ/exec"
+                action="https://script.google.com/macros/s/AKfycbyNPVYZk05foRuedXodGtXgin2iBXWbMiKaDeJUsth84D1_-Xgu1iRCIfjBEWuljpk/exec"
                 method="POST">
-                <input type="hidden" name="Source" value="SAP FICO Landing Page - Hero Form">
+                <input type="hidden" name="Source" value="Digital Marketing">
                 <div>
                     <label class="block text-sm font-semibold text-slate-700 mb-1">Name</label>
                     <input type="text" name="Name" placeholder="Your Name" required
@@ -644,14 +800,33 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p class="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">Our Alumni Work
                 At Top Companies</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-14">
-                <img src="Deloitte.png" alt="Deloitte" class="company-logo">
-                <img src="tcs.jpg" alt="TCS" class="company-logo">
-                <img src="Infosys.png" alt="Infosys" class="company-logo">
-                <img src="wipro.png" alt="Wipro" class="company-logo">
-                <img src="Capgemini.png" alt="Capgemini" class="company-logo">
-                <img src="IBMpng.png" alt="IBM" class="company-logo">
-                <img src="hcl.png" alt="HCL" class="company-logo">
+            <div class="logo-carousel" aria-label="Companies where Global Coach IT Academy alumni work">
+                <div class="logo-carousel-track">
+                    <div class="logo-carousel-set">
+                        <img src="Deloitte.png" alt="Deloitte" class="company-logo">
+                        <img src="tcs.jpg" alt="TCS" class="company-logo">
+                        <img src="Infosys.png" alt="Infosys" class="company-logo">
+                        <img src="wipro.png" alt="Wipro" class="company-logo">
+                        <img src="Capgemini.png" alt="Capgemini" class="company-logo">
+                        <img src="IBMpng.png" alt="IBM" class="company-logo">
+                        <img src="hcl.png" alt="HCL" class="company-logo">
+                        <img src="Hindustan_Unilever.png" alt="Hindustan Unilever" class="company-logo">
+                        <img src="state_bank_india.png" alt="State Bank of India" class="company-logo">
+                        <img src="Reliance_Retail.png" alt="Reliance Retail" class="company-logo">
+                    </div>
+                    <div class="logo-carousel-set" aria-hidden="true">
+                        <img src="Deloitte.png" alt="" class="company-logo">
+                        <img src="tcs.jpg" alt="" class="company-logo">
+                        <img src="Infosys.png" alt="" class="company-logo">
+                        <img src="wipro.png" alt="" class="company-logo">
+                        <img src="Capgemini.png" alt="" class="company-logo">
+                        <img src="IBMpng.png" alt="" class="company-logo">
+                        <img src="hcl.png" alt="" class="company-logo">
+                        <img src="Hindustan_Unilever.png" alt="" class="company-logo">
+                        <img src="state_bank_india.png" alt="" class="company-logo">
+                        <img src="Reliance_Retail.png" alt="" class="company-logo">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -662,7 +837,7 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="font-display text-3xl md:text-4xl font-bold text-dark mb-4" style="color:#00b5fe;">Real Outcomes, Real Stories</h2>
                 <p class="text-slate-600 text-lg">Don't just take our word for it. Look at what our past students have
-                    achieved after completing our SAP program.</p>
+                    achieved after completing our Digital Marketing program.</p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 lg:items-stretch items-center">
@@ -680,44 +855,44 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
                     <article class="bg-white p-4 rounded-xl shadow-soft border border-slate-100">
                         <div class="flex items-center gap-3 mb-3">
-                            <img src="hero2.png" alt="Ravi K." class="h-14 w-14 rounded-full object-cover">
+                            <img src="stu1.png" alt="Priya K." class="h-14 w-14 rounded-full object-cover">
                             <div>
-                                <h4 class="font-display text-base font-bold text-dark">Ravi K.</h4>
+                                <h4 class="font-display text-base font-bold text-dark">Priya K.</h4>
                                 <p class="text-xs font-semibold text-slate-500">Hyderabad</p>
                             </div>
                         </div>
-                        <p class="text-sm font-bold text-slate-900">SAP FICO Consultant, TCS</p>
+                        <p class="text-sm font-bold text-slate-900">Digital Marketing Executive, TCS</p>
                         <p class="mt-1 text-sm font-extrabold text-primary-600">&#8377;6.2L package</p>
                         <p class="mt-3 text-xs leading-relaxed text-slate-600">
-                            &quot;Got placed at TCS as SAP FICO Consultant with &#8377;6.2L package within 40 days of completing the course.&quot; &mdash; Ravi K., Hyderabad
+                            &quot;Got placed at TCS as Digital Marketing Executive with &#8377;6.2L package within 40 days of completing the course.&quot; &mdash; Ravi K., Hyderabad
                         </p>
                     </article>
 
                     <article class="bg-white p-4 rounded-xl shadow-soft border border-slate-100">
                         <div class="flex items-center gap-3 mb-3">
-                            <img src="hero2.png" alt="Priya S." class="h-14 w-14 rounded-full object-cover">
+                            <img src="stu2.png" alt="Priya S." class="h-14 w-14 rounded-full object-cover">
                             <div>
-                                <h4 class="font-display text-base font-bold text-dark">Priya S.</h4>
+                                <h4 class="font-display text-base font-bold text-dark">Ravi Kumar</h4>
                                 <p class="text-xs font-semibold text-slate-500">Hyderabad</p>
                             </div>
                         </div>
-                        <p class="text-sm font-bold text-slate-900">SAP FI Associate Consultant, Infosys</p>
-                        <p class="mt-1 text-sm font-extrabold text-primary-600">&#8377;5.8L package</p>
+                        <p class="text-sm font-bold text-slate-900">Digital Marketing Specialist, Infosys</p>
+                        <p class="mt-1 text-sm font-extrabold text-primary-600">&#8377;7L package</p>
                         <p class="mt-3 text-xs leading-relaxed text-slate-600">
-                            &quot;The interview preparation and project practice helped me clear my first SAP role with confidence.&quot;
+                            &quot;The interview preparation and project practice helped me clear my first Digital Marketing role with confidence.&quot;
                         </p>
                     </article>
 
                     <article class="bg-white p-4 rounded-xl shadow-soft border border-slate-100">
                         <div class="flex items-center gap-3 mb-3">
-                            <img src="hero2.png" alt="Arjun M." class="h-14 w-14 rounded-full object-cover">
+                            <img src="stu3.png" alt="Arjun M." class="h-14 w-14 rounded-full object-cover">
                             <div>
                                 <h4 class="font-display text-base font-bold text-dark">Arjun M.</h4>
                                 <p class="text-xs font-semibold text-slate-500">Bengaluru</p>
                             </div>
                         </div>
-                        <p class="text-sm font-bold text-slate-900">SAP FICO Analyst, Deloitte</p>
-                        <p class="mt-1 text-sm font-extrabold text-primary-600">&#8377;6.5L package</p>
+                        <p class="text-sm font-bold text-slate-900">Digital Marketing Analyst, Deloitte</p>
+                        <p class="mt-1 text-sm font-extrabold text-primary-600">&#8377;11.5L package</p>
                         <p class="mt-3 text-xs leading-relaxed text-slate-600">
                             &quot;Real-time scenarios made the course practical, and placement support kept me moving every week.&quot;
                         </p>
@@ -725,14 +900,14 @@
 
                     <article class="bg-white p-4 rounded-xl shadow-soft border border-slate-100">
                         <div class="flex items-center gap-3 mb-3">
-                            <img src="hero2.png" alt="Sneha R." class="h-14 w-14 rounded-full object-cover">
+                            <img src="stu4.png" alt="Sneha R." class="h-14 w-14 rounded-full object-cover">
                             <div>
-                                <h4 class="font-display text-base font-bold text-dark">Sneha R.</h4>
+                                <h4 class="font-display text-base font-bold text-dark">Sneha Reddy</h4>
                                 <p class="text-xs font-semibold text-slate-500">Pune</p>
                             </div>
                         </div>
-                        <p class="text-sm font-bold text-slate-900">SAP Finance Consultant, Capgemini</p>
-                        <p class="mt-1 text-sm font-extrabold text-primary-600">&#8377;6.0L package</p>
+                        <p class="text-sm font-bold text-slate-900">Digital Marketing Specialist, Capgemini</p>
+                        <p class="mt-1 text-sm font-extrabold text-primary-600">&#8377;8.0L package</p>
                         <p class="mt-3 text-xs leading-relaxed text-slate-600">
                             &quot;I joined as a fresher and got clear guidance from basics to mock interviews.&quot;
                         </p>
@@ -789,7 +964,7 @@
                             class="bg-white border-2 border-slate-100 p-5 hover:border-primary-500 transition-colors shadow-sm">
                             <img src="gra3.jpg" alt="Certified Trainers" class="w-full h-32 object-contain mb-4">
                             <h4 class="font-bold text-dark text-lg mb-2 leading-tight">Certified Trainers</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed">Learn from real-time practitioners and SAP
+                            <p class="text-slate-600 text-sm leading-relaxed">Learn from real-time practitioners and Digital Marketing
                                 certified professionals with 15+ years experience.</p>
                         </div>
 
@@ -802,9 +977,9 @@
                         </div>
                     </div>
 
-                    <button type="button" @click="document.body.dataset.pendingDownloadUrl = 'sap.pdf'; showModal = true"
+                    <button type="button" @click="document.body.dataset.pendingDownloadUrl = 'digital-marketing.pdf'; showModal = true"
                         class="text-primary-600 font-semibold hover:text-primary-700 flex items-center gap-2 transition ml-4">
-                        <i class="fa-solid fa-file-pdf text-xl"></i> Click here to download SAP detailed syllabus
+                        <i class="fa-solid fa-file-pdf text-xl"></i> Click here to download Digital Marketing detailed syllabus
                     </button>
                 </div>
             </div>
@@ -817,7 +992,7 @@
             <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
                 <div>
                     <h2 class="font-display text-2xl md:text-3xl font-bold leading-tight text-dark" style="color:#00b5fe;">
-                        Ready to join the next SAP FICO batch?
+                        Ready to launch your Digital Marketing career?
                     </h2>
                     <p class="mt-3 text-slate-600 font-medium">
                         Book your free demo without scrolling back to the top.
@@ -825,9 +1000,9 @@
                 </div>
 
                 <form class="contact-form lead-flow-form grid gap-4 rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-soft sm:grid-cols-2"
-                    action="https://script.google.com/macros/s/AKfycbzBl_a4ratMgU-fQrBxxTf7xIbSgmCbWPEHWXtZEdMGJe_2g0X3lQ9q55k2BKnaYGQ/exec"
+                    action="https://script.google.com/macros/s/AKfycbyNPVYZk05foRuedXodGtXgin2iBXWbMiKaDeJUsth84D1_-Xgu1iRCIfjBEWuljpk/exec"
                     method="POST">
-                    <input type="hidden" name="Source" value="SAP FICO Landing Page - Middle Form">
+                    <input type="hidden" name="Source" value="Digital Marketing">
                     <div>
                         <label class="block text-sm font-semibold text-slate-700 mb-1">Name</label>
                         <input type="text" name="Name" placeholder="Your Name" required
@@ -857,7 +1032,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="font-display text-3xl md:text-4xl font-bold text-dark mb-4" style="color:#00b5fe;">What's Inside The Course</h2>
-                <p class="text-slate-600 text-lg">A comprehensive curriculum designed directly from industry demands.
+                <p class="text-slate-600 text-lg">A practical, industry-focused curriculum designed for real-world marketing careers.
                 </p>
             </div>
 
@@ -878,14 +1053,14 @@
                 <div
                     class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col items-center justify-center text-center hover:shadow-card transition-shadow">
                     <img src="icon3(server).png" alt="24x7 Server" class="w-12 h-12 mb-3 object-contain">
-                    <h4 class="font-display font-bold text-xl text-dark">24x7</h4>
-                    <p class="text-slate-500 text-sm">Server Access</p>
+                    <h4 class="font-display font-bold text-xl text-dark">LMS Access</h4>
+                    <p class="text-slate-500 text-sm">24x7 Learning Management System Access</p>
                 </div>
                 <div
                     class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col items-center justify-center text-center hover:shadow-card transition-shadow">
                     <img src="icon4(project).png" alt="1 Capstone" class="w-12 h-12 mb-3 object-contain">
-                    <h4 class="font-display font-bold text-xl text-dark">1 Capstone</h4>
-                    <p class="text-slate-500 text-sm">Real-time Project</p>
+                    <h4 class="font-display font-bold text-xl text-dark">Industry Projects</h4>
+                    <p class="text-slate-500 text-sm">Hands-on experience with real-world marketing challenges</p>
                 </div>
             </div>
 
@@ -896,45 +1071,40 @@
                     <div
                         class="w-10 h-10 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center font-bold mb-4">
                         1</div>
-                    <h4 class="font-bold text-dark text-lg mb-2">Introduction & Enterprise Structure</h4>
-                    <p class="text-slate-600 text-sm">Understanding SAP architecture, basic settings, and mapping
-                        organizational units.</p>
+                    <h4 class="font-bold text-dark text-lg mb-2">Digital Marketing Fundamentals & Marketing Strategy</h4>
+                    <p class="text-slate-600 text-sm">Learn the core concepts of digital marketing and develop a solid marketing strategy.</p>
                 </div>
                 <div
                     class="p-8 rounded-2xl border border-slate-200 hover:border-primary-500 hover:shadow-soft transition-all">
                     <div
                         class="w-10 h-10 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center font-bold mb-4">
                         2</div>
-                    <h4 class="font-bold text-dark text-lg mb-2">Financial Accounting (FI) Core</h4>
-                    <p class="text-slate-600 text-sm">General Ledger (GL), Accounts Payable (AP), Accounts Receivable
-                        (AR), and banking configurations.</p>
+                    <h4 class="font-bold text-dark text-lg mb-2">Search Engine Optimization (SEO)</h4>
+                    <p class="text-slate-600 text-sm">Learn how to improve your website's visibility in search engine results and drive organic traffic.</p>
                 </div>
                 <div
                     class="p-8 rounded-2xl border border-slate-200 hover:border-primary-500 hover:shadow-soft transition-all">
                     <div
                         class="w-10 h-10 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center font-bold mb-4">
                         3</div>
-                    <h4 class="font-bold text-dark text-lg mb-2">Asset Accounting (AA)</h4>
-                    <p class="text-slate-600 text-sm">Asset classes, depreciation runs, acquisitions, retirements, and
-                        reporting.</p>
+                    <h4 class="font-bold text-dark text-lg mb-2">Google Ads & PPC Advertising</h4>
+                    <p class="text-slate-600 text-sm">Learn how to create and manage effective Google Ads campaigns and maximize your return on investment.</p>
                 </div>
                 <div
                     class="p-8 rounded-2xl border border-slate-200 hover:border-primary-500 hover:shadow-soft transition-all">
                     <div
                         class="w-10 h-10 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center font-bold mb-4">
                         4</div>
-                    <h4 class="font-bold text-dark text-lg mb-2">Controlling (CO) Fundamentals</h4>
-                    <p class="text-slate-600 text-sm">Cost Element Accounting, Cost Center Accounting, and Internal
-                        Orders.</p>
+                    <h4 class="font-bold text-dark text-lg mb-2">Social Media Marketing (SMM)</h4>
+                    <p class="text-slate-600 text-sm">Learn how to leverage social media platforms to build brand awareness, engage with your audience, and drive traffic to your website.</p>
                 </div>
                 <div
                     class="p-8 rounded-2xl border border-slate-200 hover:border-primary-500 hover:shadow-soft transition-all">
                     <div
                         class="w-10 h-10 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center font-bold mb-4">
                         5</div>
-                    <h4 class="font-bold text-dark text-lg mb-2">Integration & Advanced Topics</h4>
-                    <p class="text-slate-600 text-sm">FI-MM integration, FI-SD integration, GST configuration basics,
-                        and month-end closing.</p>
+                    <h4 class="font-bold text-dark text-lg mb-2">Live Projects, Portfolio Building & Interview Preparation</h4>
+                    <p class="text-slate-600 text-sm">Work on real-world projects, build a compelling portfolio, and prepare for job interviews.</p>
                 </div>
                 <div class="p-8 rounded-2xl bg-dark text-white shadow-card relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-10"><i
@@ -946,7 +1116,7 @@
                         <h4 class="font-bold text-white text-lg mb-2">Projects & Interview Prep</h4>
                         <p class="text-slate-300 text-sm mb-4">End-to-end implementation project, resume building, and
                             rigorous mock interviews.</p>
-                        <button @click="document.body.dataset.pendingDownloadUrl = 'sap.pdf'; showModal = true"
+                        <button @click="document.body.dataset.pendingDownloadUrl = 'digital-marketing.pdf'; showModal = true"
                             class="text-primary-400 font-semibold text-sm hover:text-white transition">Download Syllabus
                             <i class="fa-solid fa-arrow-right ml-1"></i></button>
                     </div>
@@ -972,7 +1142,7 @@
                         Seats for the upcoming batch are filling fast!
                     </h2>
                     <p class="text-primary-100 text-base mb-6 max-w-xl mx-auto lg:mx-0">
-                        Don't wait. Schedule a 1-on-1 counseling session or attend a free demo class to understand our
+                        Don't wait.Schedule a career counseling session or attend a free Digital Marketing demo class. to understand our
                         approach.
                     </p>
                     <div class="flex flex-wrap justify-center lg:justify-start gap-4 mt-2">
@@ -1034,7 +1204,7 @@
                         </button>
                         <div x-show="selected === 2" x-collapse>
                             <div class="px-6 py-4 bg-white text-slate-600 border-t border-slate-200 leading-relaxed">
-                                The standard duration for SAP FICO or SAP MM modules is around 90 days. We also offer
+                                The standard duration for Digital Marketing program is around 90 days. We also offer
                                 fast-track weekend batches tailored for working professionals.
                             </div>
                         </div>
@@ -1061,16 +1231,13 @@
                     <div class="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
                         <button @click="selected !== 4 ? selected = 4 : selected = null"
                             class="w-full text-left px-6 py-4 hover:bg-slate-50 flex justify-between items-center transition font-semibold text-dark">
-                            Am I eligible for SAP FICO / SAP MM?
+                            Am I eligible for Digital Marketing?
                             <i class="fa-solid fa-chevron-down transition-transform duration-300"
                                 :class="selected === 4 ? 'rotate-180' : ''"></i>
                         </button>
                         <div x-show="selected === 4" x-collapse>
                             <div class="px-6 py-4 bg-white text-slate-600 border-t border-slate-200 leading-relaxed">
-                                For SAP FICO, candidates with a background in Finance, Commerce (B.Com, M.Com, MBA
-                                Finance,
-                                CA, ICWA) are ideal. For SAP MM, anyone with graduation (B.Tech, B.Sc) or experience in
-                                procurement/supply chain is eligible.
+                                For Digital Marketing candidates with a background Students, graduates, business owners, freelancers, job seekers, working professionals, and entrepreneurs can join.
                             </div>
                         </div>
                     </div>
@@ -1109,8 +1276,7 @@
                         
                     </div>
                     <p class="text-sm leading-relaxed mb-6 max-w-sm">
-                        A premium IT academy in Hyderabad specializing in SAP training. We transform aspiring
-                        professionals into successful SAP consultants.
+                        A leading training institute helping students build successful careers in Digital Marketing, SEO, Social Media Marketing, Performance Marketing, and AI Marketing.
                     </p>
                 </div>
 
@@ -1164,21 +1330,23 @@
         </button>
     </div>
 
-    <!-- DESKTOP FLOATING CTA BUTTONS -->
-    <div class="hidden lg:flex fixed right-6 bottom-6 z-50 flex-col gap-3">
+    <!-- FLOATING CTA BUTTONS -->
+    <div class="fixed right-4 bottom-24 z-50 flex flex-col items-end gap-3 md:bottom-6 lg:right-6">
         <a href="https://wa.me/917337376600" target="_blank" rel="noopener" aria-label="WhatsApp Global Coach"
             title="WhatsApp Global Coach"
-            class="h-14 w-14 rounded-full bg-green-500 text-white shadow-2xl shadow-green-500/30 transition-transform hover:-translate-y-1 hover:bg-green-600 flex items-center justify-center">
+            class="h-14 px-5 rounded-full bg-green-500 text-white shadow-2xl shadow-green-500/30 transition-transform hover:-translate-y-1 hover:bg-green-600 flex items-center justify-center gap-3 font-semibold whitespace-nowrap">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                 <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
             </svg>
+            <span>Chat on WhatsApp</span>
         </a>
-        <a href="tel:+917337376600" aria-label="Call Global Coach" title="Call Global Coach"
-            class="h-14 w-14 rounded-full bg-primary-600 text-white shadow-2xl shadow-primary-600/30 transition-transform hover:-translate-y-1 hover:bg-primary-700 flex items-center justify-center">
+        <!-- <a href="tel:+917337376600" aria-label="Call Global Coach" title="Call Global Coach"
+            class="h-14 px-5 rounded-full bg-primary-600 text-white shadow-2xl shadow-primary-600/30 transition-transform hover:-translate-y-1 hover:bg-primary-700 flex items-center justify-center gap-3 font-semibold whitespace-nowrap">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
                 <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
             </svg>
-        </a>
+            <span>Call Now</span>
+        </a> -->
     </div>
 
     <!-- MODAL FORM (Triggered globally) -->
@@ -1209,7 +1377,7 @@
                     <div class="px-6 py-8">
                         <div class="text-center mb-6">
                             <h3 class="font-display text-2xl font-bold text-dark mb-2" id="modal-title"
-                                x-text="showModal && document.body.dataset.pendingDownloadUrl ? 'Download SAP Detailed Syllabus' : 'Book Your Free Demo'" style="color:#00b5fe;">
+                                x-text="showModal && document.body.dataset.pendingDownloadUrl ? 'Download Digital Marketing Detailed Syllabus' : 'Book Your Free Demo'" style="color:#00b5fe;">
                                 Book Your Free Demo</h3>
                             <p class="text-slate-500 text-sm"
                                 x-text="showModal && document.body.dataset.pendingDownloadUrl ? 'Share two details and the PDF will download instantly.' : 'Share two details and we will schedule your demo.'">
@@ -1217,9 +1385,9 @@
                         </div>
 
                         <form class="contact-form lead-flow-form space-y-4"
-                            action="https://script.google.com/macros/s/AKfycbzBl_a4ratMgU-fQrBxxTf7xIbSgmCbWPEHWXtZEdMGJe_2g0X3lQ9q55k2BKnaYGQ/exec"
+                            action="https://script.google.com/macros/s/AKfycbyNPVYZk05foRuedXodGtXgin2iBXWbMiKaDeJUsth84D1_-Xgu1iRCIfjBEWuljpk/exec"
                             method="POST">
-                            <input type="hidden" name="Source" value="SAP FICO Landing Page - Modal Form">
+                            <input type="hidden" name="Source" value="Digital Marketing">
                             <div>
                                 <label class="block text-sm font-semibold text-slate-700 mb-1">Name</label>
                                 <input type="text" name="Name" required
@@ -1252,9 +1420,9 @@
     </div>
 
     <script>
-        const CONTACT_FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbzBl_a4ratMgU-fQrBxxTf7xIbSgmCbWPEHWXtZEdMGJe_2g0X3lQ9q55k2BKnaYGQ/exec";
+        const CONTACT_FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyNPVYZk05foRuedXodGtXgin2iBXWbMiKaDeJUsth84D1_-Xgu1iRCIfjBEWuljpk/exec";
         const CRATIO_WEBHOOK_URL = "https://apps.cratiocrm.com/Customize/Webhooks/webhook.php?id=499477";
-        const THANK_YOU_PAGE_URL = "fico-thankyou.html";
+        const THANK_YOU_PAGE_URL = "digital-marketing-thank-you.html";
 
         function redirectToThankYouPage() {
             window.location.href = THANK_YOU_PAGE_URL;
@@ -1287,28 +1455,21 @@
         async function submitLeadToAllDestinations(payload) {
             const sheetsPromise = postLeadPayload(CONTACT_FORM_ENDPOINT, payload);
             const cratioPayload = getLeadPayloadObject(payload);
-            const cratioPromise = fetch(CRATIO_WEBHOOK_URL, {
+            fetch(CRATIO_WEBHOOK_URL, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
+                mode: "no-cors",
                 body: JSON.stringify(cratioPayload)
             }).catch((error) => {
                 console.error("CRM Error:", error);
-                throw error;
             });
 
-            await Promise.all([
-                sheetsPromise,
-                cratioPromise
-            ]);
+            await sheetsPromise;
         }
 
         function downloadFile(fileUrl) {
             const downloadLink = document.createElement("a");
             downloadLink.href = fileUrl;
-            downloadLink.download = fileUrl.split("/").pop() || "syllabus.pdf";
+            downloadLink.download = fileUrl.split("/").pop() || "digital-marketing.pdf";
             document.body.appendChild(downloadLink);
             downloadLink.click();
             downloadLink.remove();
@@ -1354,10 +1515,6 @@
 
                 const pendingDownloadUrl = document.body.dataset.pendingDownloadUrl || "";
                 const formData = new FormData(form);
-
-                if (pendingDownloadUrl) {
-                    formData.set("Source", "SAP Detailed Syllabus Download");
-                }
 
                 const submitButton = form.querySelector('button[type="submit"]');
                 const originalButtonContent = submitButton.innerHTML;
@@ -1417,7 +1574,7 @@
 
                 try {
                     await submitLeadToAllDestinations({
-                        Source: "Immediate Callback",
+                        Source: "Digital Marketing",
                         Mobile: phoneInput.value.trim(),
                         Message: "Immediate callback requested in less than 10 minutes"
                     });

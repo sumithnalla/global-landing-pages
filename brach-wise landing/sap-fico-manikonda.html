@@ -14,7 +14,7 @@
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>SAP FICO Training in Manikonda Hyderabad | Global Coach IT Academy</title>
     <meta name="description"
         content="Join top-rated SAP FICO training at Global Coach IT Academy Manikonda branch in Hyderabad. Real-time projects, expert trainers, 100% placement assistance & free demo.">
@@ -51,8 +51,8 @@
                         dark: '#0f172a'
                     },
                     boxShadow: {
-                        'soft': '0 4px 40px -2px rgba(0, 0, 0, 0.05)',
-                        'card': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'soft': '0 4px 30px -2px rgba(0, 0, 0, 0.06)',
+                        'card': '0 10px 35px -10px rgba(0,0,0,0.08)',
                     }
                 }
             }
@@ -62,255 +62,331 @@
     <!-- Alpine.js for Interactivity -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
 
-    <!-- External Stylesheet -->
+    <!-- External Mobile-First Stylesheet -->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.jpg" type="image/jpeg">
 </head>
 
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-100 selection:text-primary-900 pt-20"
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-100 selection:text-primary-900 pt-16 md:pt-20"
     x-data="{ showModal: false, showMobileMenu: false }">
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNK2QR5Z" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- 1. HEADER -->
-    <header class="fixed top-0 inset-x-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <!-- 1. HEADER (Mobile First Navbar) -->
+    <header class="fixed top-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <img src="logo.png" alt="Global Coach IT Academy Logo" class="h-14 md:h-16 w-auto object-contain">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- Left: Logo -->
+                <div class="flex items-center gap-2">
+                    <img src="logo.png" alt="Global Coach IT Academy Logo" class="h-11 sm:h-14 md:h-16 w-auto object-contain">
                 </div>
 
-                <div class="hidden md:flex items-center gap-6">
+                <!-- Right: Contact & Demo Button -->
+                <div class="flex items-center gap-2 sm:gap-4">
                     <a href="tel:+918790532776"
-                        class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-full font-semibold text-sm shadow-lg shadow-primary-600/30 transition-transform transform hover:-translate-y-0.5 flex items-center gap-2">
-                        <i class="fa-solid fa-phone"></i> 8790532776
+                        class="bg-primary-600 hover:bg-primary-700 text-white px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm shadow-md transition-transform transform hover:-translate-y-0.5 flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>8790532776</span>
                     </a>
                     <button @click="document.body.dataset.pendingDownloadUrl = ''; showModal = true"
-                        class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-full font-semibold text-sm shadow-lg shadow-primary-600/30 transition-transform transform hover:-translate-y-0.5 flex items-center gap-2">
-                        <i class="fa-solid fa-calendar"></i> Book Demo
+                        class="hidden sm:flex bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-full font-bold text-sm shadow-md transition-transform transform hover:-translate-y-0.5 items-center gap-2">
+                        <i class="fa-solid fa-calendar-check"></i> Book Demo
                     </button>
-                </div>
-
-                <div class="md:hidden flex items-center">
-                    <button @click="showMobileMenu = !showMobileMenu" class="text-slate-600 hover:text-primary-600 p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div x-show="showMobileMenu" x-collapse x-cloak class="md:hidden pb-4">
-                <div class="flex flex-col gap-3 pt-2">
-                    <a href="tel:+918790532776"
-                        class="w-full bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md text-center flex justify-center items-center gap-2">
-                        <i class="fa-solid fa-phone"></i> Call Now
-                    </a>
-                    <a href="https://wa.me/918790532776" target="_blank"
-                        class="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md text-center flex justify-center items-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp Us
-                    </a>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- 2. HEADLINE BAND -->
-    <section class="headline-band">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 text-center">
-            <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-dark">
-                Global Coach IT Academy Manikonda Branch
-                <span class="headline-highlight block sm:inline">&mdash; SAP FICO Training & Placement Assistance</span>
+    <section class="headline-band py-4 sm:py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-1.5 bg-amber-500/15 border border-amber-500/30 text-amber-900 text-[11px] sm:text-xs font-extrabold px-3 py-1 rounded-full mb-2 animate-pulse-subtle">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                Manikonda Branch &bull; Next FICO Batch Starts Soon (4 Seats Left)
+            </div>
+
+            <h1 class="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-dark">
+                Global Coach IT Academy Manikonda
+                <span class="headline-highlight block mt-0.5 sm:inline">&mdash; SAP FICO Training & Placement</span>
             </h1>
         </div>
     </section>
 
     <!-- 3. HERO SECTION -->
     <section class="bg-slate-50">
-        <div class="hero-layout grid lg:grid-cols-[62%_38%] xl:grid-cols-[70%_30%]">
-            <div class="hero-media relative order-2 overflow-hidden lg:order-1">
+        <div class="hero-layout grid lg:grid-cols-[60%_40%] xl:grid-cols-[65%_35%]">
+            
+            <!-- Image Carousel Box -->
+            <div class="hero-media relative min-h-[260px] sm:min-h-[360px] lg:min-h-[480px] order-1 overflow-hidden">
                 <div class="absolute inset-0 h-full w-full overflow-hidden"
                     x-data="{ activeSlide: 0, slides: ['hero2.jpg', 'hero00.jpeg', 'hero22.jpeg', 'times.jpeg', 'hero2.png', 'hero11.jpeg'] }"
-                    x-init="setInterval(() => activeSlide = (activeSlide + 1) % slides.length, 2000)">
+                    x-init="setInterval(() => activeSlide = (activeSlide + 1) % slides.length, 2500)">
                     <template x-for="(slide, index) in slides" :key="index">
-                        <img :src="slide" alt="Global Coach IT Academy Manikonda branch"
+                        <img :src="slide" alt="Global Coach IT Academy Manikonda branch classroom"
                             class="hero-media-image absolute inset-0 h-full w-full object-cover"
                             x-show="activeSlide === index"
-                            x-transition:enter="transition-transform duration-1000 ease-in-out"
-                            x-transition:enter-start="translate-x-full"
-                            x-transition:enter-end="translate-x-0"
-                            x-transition:leave="transition-transform duration-1000 ease-in-out absolute"
-                            x-transition:leave-start="translate-x-0"
-                            x-transition:leave-end="-translate-x-full">
+                            x-transition:enter="transition-opacity duration-700 ease-in-out"
+                            x-transition:enter-start="opacity-0"
+                            x-transition:enter-end="opacity-100"
+                            x-transition:leave="transition-opacity duration-700 ease-in-out absolute"
+                            x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0">
                     </template>
                 </div>
 
-                <div class="hero-quick-actions absolute bottom-6 left-4 right-4 flex flex-col gap-4 sm:left-8 sm:right-auto sm:flex-row lg:bottom-8 lg:left-10">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
+
+                <div class="absolute bottom-4 left-3 right-3 flex gap-2.5 sm:left-6 sm:right-auto z-10">
                     <a href="tel:+918790532776"
-                        class="hero-quick-action inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-7 py-3.5 rounded-xl font-bold text-base shadow-2xl transition-transform transform hover:-translate-y-0.5"
-                        style="box-shadow: 0 8px 32px rgba(14,165,233,0.40);">
-                        <i class="fa-solid fa-phone"></i> Call Now
+                        class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm shadow-xl">
+                        <i class="fa-solid fa-phone"></i> Call Branch
                     </a>
                     <a href="https://wa.me/918790532776" target="_blank"
-                        class="hero-quick-action inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-7 py-3.5 rounded-xl font-bold text-base shadow-2xl transition-transform transform hover:-translate-y-0.5"
-                        style="box-shadow: 0 8px 32px rgba(34,197,94,0.40);">
-                        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+                        class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm shadow-xl">
+                        <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Us
                     </a>
                 </div>
             </div>
 
-            <div class="hero-form-column order-1 flex items-stretch lg:order-2">
-                <div class="hero-form-panel flex w-full flex-col justify-center">
-                    <div class="flex justify-center mb-3">
-                        <span
-                            class="bg-white/90 text-primary-700 text-[11px] font-bold px-4 py-1.5 rounded-full shadow-sm uppercase tracking-wider">Limited
-                            Seats</span>
+            <!-- Hero Booking Form Column -->
+            <div class="hero-form-column order-2 p-4 sm:p-6 flex items-center justify-center">
+                <div class="hero-form-panel w-full max-w-md p-5 sm:p-6">
+                    <div class="flex justify-center mb-2">
+                        <span class="bg-primary-100 text-primary-700 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+                            ⚡ Free Demo Class
+                        </span>
                     </div>
-                    <h3 class="text-2xl font-extrabold text-center text-dark mb-1" style="color:#00b5fe;">Book a Free SAP FICO Demo at Manikonda</h3>
-                    <p class="text-sm text-center text-slate-800 font-medium mb-5">Share two details. Our Manikonda SAP FICO counselor will call you.</p>
+                    <h3 class="text-xl sm:text-2xl font-extrabold text-center text-dark mb-1" style="color:#00b5fe;">
+                        Book a Free SAP FICO Demo
+                    </h3>
+                    <p class="text-xs sm:text-sm text-center text-slate-600 font-medium mb-4">
+                        Share 2 details. Our Manikonda FICO counselor will contact you.
+                    </p>
 
-                    <form class="contact-form lead-flow-form space-y-4"
+                    <form class="contact-form lead-flow-form space-y-3.5"
                         action="https://script.google.com/macros/s/AKfycbzBl_a4ratMgU-fQrBxxTf7xIbSgmCbWPEHWXtZEdMGJe_2g0X3lQ9q55k2BKnaYGQ/exec"
                         method="POST">
                         <input type="hidden" name="Source" value="Manikonda Branch Page - SAP FICO">
                         <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-1">Name</label>
-                            <input type="text" name="Name" placeholder="Your Name" required
-                                class="w-full px-4 py-3.5 bg-white/95 border border-slate-200 rounded-xl focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 text-[15px] text-slate-800 placeholder:text-slate-500 shadow-sm transition-colors">
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Full Name</label>
+                            <input type="text" name="Name" placeholder="Enter Your Name" required
+                                class="w-full px-3.5 py-3 bg-white border border-slate-300 rounded-xl focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 text-sm text-slate-800 placeholder:text-slate-400 shadow-sm transition">
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-1">Phone / WhatsApp</label>
-                            <input type="tel" name="Mobile" placeholder="Phone / WhatsApp" inputmode="numeric"
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Phone / WhatsApp Number</label>
+                            <input type="tel" name="Mobile" placeholder="10-digit Phone Number" inputmode="numeric"
                                 autocomplete="tel" required minlength="10" maxlength="10" pattern="[0-9]{10}"
                                 title="Enter exactly 10 digits"
-                                class="w-full px-4 py-3.5 bg-white/95 border border-slate-200 rounded-xl focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 text-[15px] text-slate-800 placeholder:text-slate-500 shadow-sm transition-colors">
+                                class="w-full px-3.5 py-3 bg-white border border-slate-300 rounded-xl focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 text-sm text-slate-800 placeholder:text-slate-400 shadow-sm transition">
                         </div>
-                        <p class="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-center text-sm font-bold text-amber-800">
-                            Manikonda next batch starts soon &mdash; Only 4 seats remaining. Book your free demo now.
-                        </p>
+                        
+                        <div class="rounded-xl border border-amber-200 bg-amber-50 p-2.5 text-center text-xs font-bold text-amber-800">
+                            📢 Manikonda Branch &bull; Batch Starts Soon (Only 4 Seats Left)
+                        </div>
+
                         <button type="submit"
-                            class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3.5 rounded-xl shadow-[0_4px_15px_rgba(2,132,199,0.3)] transition-colors text-base flex justify-center items-center gap-2">
-                            Get My Free Demo Now <i class="fa-solid fa-arrow-right text-sm"></i>
+                            class="w-full bg-primary-600 hover:bg-primary-700 active:scale-[0.99] text-white font-extrabold py-3.5 rounded-xl shadow-lg transition text-sm sm:text-base flex justify-center items-center gap-2">
+                            Get My Free FICO Demo <i class="fa-solid fa-arrow-right text-xs"></i>
                         </button>
                     </form>
 
-                    <p class="text-xs text-center text-slate-800 mt-5 flex items-center justify-center gap-1.5 font-semibold">
-                        <i class="fa-regular fa-clock"></i> Our Experts will get in touch with you
+                    <p class="text-[11px] text-center text-slate-500 mt-3 font-semibold flex items-center justify-center gap-1">
+                        <i class="fa-solid fa-shield-halved text-green-500"></i> 100% Privacy Protected &bull; Instant Callback
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. PROGRAM OVERVIEW (SAP FICO Curriculum & Modules) -->
-    <section class="py-12 bg-white">
+    <!-- 4. STATS BAR -->
+    <section class="py-6 bg-white border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-display text-3xl md:text-4xl font-bold text-dark mb-4" style="color:#00b5fe;">SAP FICO Training at Manikonda</h2>
-                <p class="text-slate-600 text-lg">Comprehensive SAP Financial Accounting (FI) and Controlling (CO) curriculum with real-time project configuration.</p>
-            </div>
-
-            <!-- Top Highlights -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col items-center justify-center text-center hover:shadow-card transition-shadow">
-                    <img src="icon1(days).png" alt="90 Days" class="w-12 h-12 mb-3 object-contain">
-                    <h4 class="font-display font-bold text-xl text-dark">90 Days</h4>
-                    <p class="text-slate-500 text-sm">Training Plan</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col items-center justify-center text-center hover:shadow-card transition-shadow">
-                    <img src="icon2(hours).png" alt="120+ Hrs" class="w-12 h-12 mb-3 object-contain">
-                    <h4 class="font-display font-bold text-xl text-dark">120+ Hrs</h4>
-                    <p class="text-slate-500 text-sm">Live Sessions</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col items-center justify-center text-center hover:shadow-card transition-shadow">
-                    <img src="icon3(server).png" alt="24x7 Server" class="w-12 h-12 mb-3 object-contain">
-                    <h4 class="font-display font-bold text-xl text-dark">24x7</h4>
-                    <p class="text-slate-500 text-sm">Server Access</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col items-center justify-center text-center hover:shadow-card transition-shadow">
-                    <img src="icon4(project).png" alt="Real-time Practice" class="w-12 h-12 mb-3 object-contain">
-                    <h4 class="font-display font-bold text-xl text-dark">Projects</h4>
-                    <p class="text-slate-500 text-sm">Real-time Practice</p>
-                </div>
-            </div>
-
-            <!-- FICO Modules Grid (Numbered 1-6 cleanly) -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="p-8 rounded-2xl border border-primary-400 bg-primary-50/40 hover:shadow-soft transition-all">
-                    <div class="w-10 h-10 rounded-lg bg-primary-600 text-white flex items-center justify-center font-bold mb-4">1</div>
-                    <h4 class="font-bold text-dark text-lg mb-2">Financial Accounting (FI) Core</h4>
-                    <p class="text-slate-600 text-sm">General Ledger (G/L), Accounts Payable (AP), Accounts Receivable (AR), and Asset Accounting configuration.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
+                <div class="bg-slate-50 p-3.5 sm:p-5 rounded-xl border border-slate-200 flex items-center gap-3">
+                    <img src="icon1(days).png" alt="90 Days" class="w-9 h-9 sm:w-11 sm:h-11 object-contain flex-shrink-0">
+                    <div>
+                        <h4 class="font-display font-extrabold text-base sm:text-lg text-dark leading-none">90 Days</h4>
+                        <p class="text-slate-500 text-[11px] sm:text-xs font-medium mt-0.5">Training Plan</p>
+                    </div>
                 </div>
 
-                <div class="p-8 rounded-2xl border border-slate-200 hover:border-primary-500 hover:shadow-soft transition-all bg-white">
-                    <div class="w-10 h-10 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center font-bold mb-4">2</div>
-                    <h4 class="font-bold text-dark text-lg mb-2">Controlling (CO) Management</h4>
-                    <p class="text-slate-600 text-sm">Cost Element, Cost Center Accounting, Internal Orders, Profit Center, and CO-PA basics.</p>
+                <div class="bg-slate-50 p-3.5 sm:p-5 rounded-xl border border-slate-200 flex items-center gap-3">
+                    <img src="icon2(hours).png" alt="120+ Hrs" class="w-9 h-9 sm:w-11 sm:h-11 object-contain flex-shrink-0">
+                    <div>
+                        <h4 class="font-display font-extrabold text-base sm:text-lg text-dark leading-none">120+ Hrs</h4>
+                        <p class="text-slate-500 text-[11px] sm:text-xs font-medium mt-0.5">Live Sessions</p>
+                    </div>
                 </div>
 
-                <div class="p-8 rounded-2xl border border-slate-200 hover:border-primary-500 hover:shadow-soft transition-all bg-white">
-                    <div class="w-10 h-10 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center font-bold mb-4">3</div>
-                    <h4 class="font-bold text-dark text-lg mb-2">Real-time FICO Integration</h4>
-                    <p class="text-slate-600 text-sm">Cross-module integration concepts: FI-MM (Procure-to-Pay) and FI-SD (Order-to-Cash) workflow practice.</p>
+                <div class="bg-slate-50 p-3.5 sm:p-5 rounded-xl border border-slate-200 flex items-center gap-3">
+                    <img src="icon3(server).png" alt="24x7 Server" class="w-9 h-9 sm:w-11 sm:h-11 object-contain flex-shrink-0">
+                    <div>
+                        <h4 class="font-display font-extrabold text-base sm:text-lg text-dark leading-none">24x7</h4>
+                        <p class="text-slate-500 text-[11px] sm:text-xs font-medium mt-0.5">Server Access</p>
+                    </div>
                 </div>
 
-                <div class="p-8 rounded-2xl border border-slate-200 hover:border-primary-500 hover:shadow-soft transition-all bg-white">
-                    <div class="w-10 h-10 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center font-bold mb-4">4</div>
-                    <h4 class="font-bold text-dark text-lg mb-2">Offline Classroom Support</h4>
-                    <p class="text-slate-600 text-sm">Attend guided sessions at our Manikonda branch with direct mentor support and 1-on-1 doubt clearing.</p>
-                </div>
-
-                <div class="p-8 rounded-2xl border border-slate-200 hover:border-primary-500 hover:shadow-soft transition-all bg-white">
-                    <div class="w-10 h-10 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center font-bold mb-4">5</div>
-                    <h4 class="font-bold text-dark text-lg mb-2">FICO Interview & Placement Prep</h4>
-                    <p class="text-slate-600 text-sm">SAP FICO domain resume preparation, mock interviews, candidate profiling, and placement support.</p>
-                </div>
-
-                <div class="p-8 rounded-2xl bg-dark text-white shadow-card relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10"><i class="fa-solid fa-graduation-cap text-8xl"></i></div>
-                    <div class="relative z-10">
-                        <div class="w-10 h-10 rounded-lg bg-white/20 text-white flex items-center justify-center font-bold mb-4">6</div>
-                        <h4 class="font-bold text-white text-lg mb-2">Free FICO Demo & Counseling</h4>
-                        <p class="text-slate-300 text-sm mb-4">Visit our Manikonda branch, meet certified FICO experts, and start your SAP career.</p>
-                        <button @click="document.body.dataset.pendingDownloadUrl = 'sap.pdf'; showModal = true"
-                            class="text-primary-400 font-semibold text-sm hover:text-white transition">Download FICO Syllabus
-                            <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                <div class="bg-slate-50 p-3.5 sm:p-5 rounded-xl border border-slate-200 flex items-center gap-3">
+                    <img src="icon4(project).png" alt="Projects" class="w-9 h-9 sm:w-11 sm:h-11 object-contain flex-shrink-0">
+                    <div>
+                        <h4 class="font-display font-extrabold text-base sm:text-lg text-dark leading-none">Real Projects</h4>
+                        <p class="text-slate-500 text-[11px] sm:text-xs font-medium mt-0.5">Live Configuration</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. INSTANT CALLBACK ACTION -->
-    <section class="bg-[#00b5fe] py-7 sm:py-8">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-white text-2xl sm:text-3xl md:text-4xl font-medium leading-tight mb-7">
-                Get A Call Back In Less Than 10 Minutes
-            </p>
-
-            <div class="instant-callback-action mx-auto grid max-w-3xl gap-4 sm:grid-cols-[minmax(0,1fr)_180px]"
-                role="group" aria-label="Immediate callback request">
-                <input type="tel" name="Mobile" inputmode="numeric" autocomplete="off" required minlength="10"
-                    maxlength="10" pattern="[0-9]{10}" title="Enter a 10-digit phone number"
-                    placeholder="Enter 10-digit Phone Number"
-                    class="min-h-[60px] w-full border-0 bg-white px-5 text-base sm:text-lg font-semibold text-slate-800 placeholder:text-slate-400 outline-none focus:ring-4 focus:ring-white/30">
-                <button type="button"
-                    class="instant-callback-submit min-h-[60px] border border-white/90 bg-white px-8 text-lg font-extrabold text-[#00b5fe] shadow-sm transition-colors hover:bg-slate-50 focus:outline-none focus:ring-4 focus:ring-white/30">
-                    Submit
-                </button>
+    <!-- 5. PROGRAM OVERVIEW (Modules Grid) -->
+    <section class="py-8 sm:py-12 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-10">
+                <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-dark" style="color:#00b5fe;">
+                    SAP FICO Curriculum & Modules
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-base mt-1">
+                    Job-oriented Financial Accounting & Controlling modules tailored for freshers & professionals.
+                </p>
             </div>
-            <p class="instant-callback-status mt-3 text-center text-sm font-semibold text-white/90" aria-live="polite">
-            </p>
+
+            <div class="mobile-card-scroll">
+                <div class="mobile-card-snap bg-white p-5 sm:p-6 rounded-2xl border-2 border-primary-500 shadow-soft flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-lg bg-primary-600 text-white font-extrabold text-sm flex items-center justify-center">1</span>
+                            <span class="feature-tag"><i class="fa-solid fa-chart-line"></i> FI Core</span>
+                        </div>
+                        <h4 class="font-bold text-dark text-base sm:text-lg mb-1.5">Financial Accounting (FI)</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            General Ledger (G/L), Accounts Payable (AP), Accounts Receivable (AR), and Asset Accounting configuration.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-primary-700">
+                        <span>Real-Time Practice</span>
+                        <i class="fa-solid fa-check-circle text-green-500"></i>
+                    </div>
+                </div>
+
+                <div class="mobile-card-snap bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 hover:border-primary-400 shadow-soft flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-lg bg-primary-100 text-primary-700 font-extrabold text-sm flex items-center justify-center">2</span>
+                            <span class="feature-tag"><i class="fa-solid fa-calculator"></i> CO Core</span>
+                        </div>
+                        <h4 class="font-bold text-dark text-base sm:text-lg mb-1.5">Controlling (CO)</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            Cost Center Accounting, Profit Center, Internal Orders, Cost Element, and CO-PA overview.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500">
+                        <span>Management Reports</span>
+                        <i class="fa-solid fa-check-circle text-green-500"></i>
+                    </div>
+                </div>
+
+                <div class="mobile-card-snap bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 hover:border-primary-400 shadow-soft flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-lg bg-primary-100 text-primary-700 font-extrabold text-sm flex items-center justify-center">3</span>
+                            <span class="feature-tag"><i class="fa-solid fa-link"></i> Integration</span>
+                        </div>
+                        <h4 class="font-bold text-dark text-base sm:text-lg mb-1.5">FICO Integrations</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            Cross-module integration: FI-MM (Procure-to-Pay) and FI-SD (Order-to-Cash) practical workflows.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500">
+                        <span>P2P & O2C Scenarios</span>
+                        <i class="fa-solid fa-check-circle text-green-500"></i>
+                    </div>
+                </div>
+
+                <div class="mobile-card-snap bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 hover:border-primary-400 shadow-soft flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-lg bg-primary-100 text-primary-700 font-extrabold text-sm flex items-center justify-center">4</span>
+                            <span class="feature-tag"><i class="fa-solid fa-building-columns"></i> Branch</span>
+                        </div>
+                        <h4 class="font-bold text-dark text-base sm:text-lg mb-1.5">Offline Manikonda Classes</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            Direct classroom training at Alkapoor/Manikonda branch with mentor support & doubt clearing.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500">
+                        <span>Guided Mentorship</span>
+                        <i class="fa-solid fa-check-circle text-green-500"></i>
+                    </div>
+                </div>
+
+                <div class="mobile-card-snap bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 hover:border-primary-400 shadow-soft flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-lg bg-primary-100 text-primary-700 font-extrabold text-sm flex items-center justify-center">5</span>
+                            <span class="feature-tag"><i class="fa-solid fa-briefcase"></i> Placement</span>
+                        </div>
+                        <h4 class="font-bold text-dark text-base sm:text-lg mb-1.5">Resume & Placement Prep</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            Resume building for SAP FICO roles, mock technical interviews, and profile sharing with hiring partners.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500">
+                        <span>100% Placement Support</span>
+                        <i class="fa-solid fa-check-circle text-green-500"></i>
+                    </div>
+                </div>
+
+                <div class="mobile-card-snap bg-dark text-white p-5 sm:p-6 rounded-2xl shadow-card flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -right-4 -bottom-4 opacity-10"><i class="fa-solid fa-file-pdf text-8xl"></i></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-lg bg-white/20 text-white font-extrabold text-sm flex items-center justify-center">6</span>
+                            <span class="bg-amber-500/20 text-amber-300 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">PDF Download</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base sm:text-lg mb-1.5">Free FICO Demo & Syllabus</h4>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                            Download the complete SAP FICO topic-by-topic course syllabus instantly.
+                        </p>
+                    </div>
+                    <button type="button" @click="document.body.dataset.pendingDownloadUrl = 'sap.pdf'; showModal = true"
+                        class="mt-4 w-full bg-primary-600 hover:bg-primary-700 text-white text-xs sm:text-sm font-extrabold py-2.5 rounded-xl transition flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-download text-xs"></i> Download Syllabus PDF
+                    </button>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- 6. ALUMNI LOGOS -->
-    <section class="py-10 bg-white border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">
-                Our FICO Alumni Work At Top Companies
+    <!-- 6. INSTANT 10-MINUTE CALLBACK ACTION -->
+    <section class="bg-[#00b5fe] py-6 sm:py-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h3 class="text-white text-xl sm:text-2xl md:text-3xl font-extrabold leading-tight mb-4">
+                Get A Call Back In Less Than 10 Minutes
+            </h3>
+
+            <div class="instant-callback-action max-w-xl mx-auto flex flex-col sm:flex-row gap-2.5">
+                <input type="tel" name="Mobile" inputmode="numeric" autocomplete="off" required minlength="10"
+                    maxlength="10" pattern="[0-9]{10}" title="Enter 10-digit phone number"
+                    placeholder="Enter 10-digit Phone Number"
+                    class="h-12 sm:h-14 w-full rounded-xl border-0 bg-white px-4 text-sm sm:text-base font-bold text-slate-800 placeholder:text-slate-400 outline-none focus:ring-4 focus:ring-white/30">
+                <button type="button"
+                    class="instant-callback-submit h-12 sm:h-14 bg-dark text-white hover:bg-slate-900 px-6 rounded-xl text-sm sm:text-base font-extrabold transition flex-shrink-0 flex items-center justify-center gap-2">
+                    Request Call Now <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </div>
+            <p class="instant-callback-status mt-2 text-xs font-semibold text-white/90" aria-live="polite"></p>
+        </div>
+    </section>
+
+    <!-- 7. ALUMNI COMPANIES CAROUSEL -->
+    <section class="py-6 sm:py-8 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-center text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-4">
+                Our FICO Students Are Placed At Top Companies
             </p>
-            <div class="logo-carousel" aria-label="Companies where Global Coach IT Academy alumni work">
+            <div class="logo-carousel">
                 <div class="logo-carousel-track">
                     <div class="logo-carousel-set">
                         <img src="Deloitte.png" alt="Deloitte" class="company-logo">
@@ -341,253 +417,266 @@
         </div>
     </section>
 
-    <!-- 7. REAL STORIES / TESTIMONIALS -->
-    <section class="py-12 bg-slate-50">
+    <!-- 8. REDESIGNED TESTIMONIALS SECTION -->
+    <section class="py-8 sm:py-12 bg-slate-50" x-data="{
+        activeStudent: 0,
+        students: [
+            { name: 'Priya K.', city: 'Hyderabad', role: 'SAP FICO Consultant', company: 'TCS', package: '₹6.2L Package', photo: 'stu1.png', quote: 'Got placed at TCS as SAP FICO Consultant within 40 days of completing the course at Manikonda branch!' },
+            { name: 'Ravi Kumar', city: 'Hyderabad', role: 'SAP FICO Associate', company: 'Infosys', package: '₹7.0L Package', photo: 'stu2.png', quote: 'The interview preparation and practical FICO project practice helped me clear my first SAP role with full confidence.' },
+            { name: 'Arjun M.', city: 'Bengaluru', role: 'SAP Financial Analyst', company: 'Deloitte', package: '₹11.5L Package', photo: 'stu3.png', quote: 'Real-time financial scenarios made the course practical, and placement support kept guiding me every week.' },
+            { name: 'Sneha Reddy', city: 'Pune', role: 'SAP FICO Consultant', company: 'Capgemini', package: '₹8.0L Package', photo: 'stu4.png', quote: 'I joined as a fresher and got clear guidance from FICO fundamentals to mock interviews.' }
+        ]
+    }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-display text-3xl md:text-4xl font-bold text-dark mb-4" style="color:#00b5fe;">Real FICO Outcomes, Real Stories</h2>
-                <p class="text-slate-600 text-lg">Look at what our SAP FICO students have achieved after training with Global Coach.</p>
+            <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
+                <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-dark" style="color:#00b5fe;">
+                    Real FICO Placements & Reviews
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-base mt-1">
+                    Tap a student below to view their placement story & review.
+                </p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 lg:items-stretch items-center">
-                <div class="relative rounded-2xl overflow-hidden shadow-card border border-slate-200 bg-black flex flex-col h-full w-full">
-                    <iframe class="w-full h-full min-h-[350px] sm:min-h-[400px] lg:min-h-full"
-                        src="https://www.youtube.com/embed/2FeuwInYE7I" title="YouTube video player" frameborder="0"
+            <!-- Student Selection Chips -->
+            <div class="flex overflow-x-auto gap-2 pb-3 mb-4 justify-start sm:justify-center no-scrollbar">
+                <template x-for="(student, index) in students" :key="index">
+                    <button @click="activeStudent = index"
+                        class="flex items-center gap-2 px-3 py-2 rounded-full text-xs font-bold transition flex-shrink-0 border"
+                        :class="activeStudent === index ? 'bg-primary-600 text-white border-primary-600 shadow-md scale-105' : 'bg-white text-slate-700 border-slate-200 hover:border-primary-400'">
+                        <img :src="student.photo" :alt="student.name" class="w-6 h-6 rounded-full object-cover">
+                        <span x-text="student.name"></span>
+                        <span class="text-[10px] opacity-80" x-text="'(' + student.company + ')'"></span>
+                    </button>
+                </template>
+            </div>
+
+            <!-- Spotlight Grid -->
+            <div class="grid lg:grid-cols-2 gap-6 items-center">
+                <div class="relative rounded-2xl overflow-hidden shadow-card border border-slate-200 bg-black min-h-[220px] sm:min-h-[300px]">
+                    <iframe class="w-full h-full min-h-[220px] sm:min-h-[300px]"
+                        src="https://www.youtube.com/embed/2FeuwInYE7I" title="Student Review Video" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
-                    <article class="bg-white p-4 rounded-xl shadow-soft border border-slate-100">
-                        <div class="flex items-center gap-3 mb-3">
-                            <img src="stu1.png" alt="Ravi K." class="h-14 w-14 rounded-full object-cover">
-                            <div>
-                                <h4 class="font-display text-base font-bold text-dark">Priya K.</h4>
-                                <p class="text-xs font-semibold text-slate-500">Hyderabad</p>
+                <div class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-primary-100 shadow-soft relative flex flex-col justify-between min-h-[260px]">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <img :src="students[activeStudent].photo" :alt="students[activeStudent].name" class="w-14 h-14 rounded-full object-cover border-2 border-primary-500 shadow-sm">
+                                <div>
+                                    <h4 class="font-extrabold text-dark text-base sm:text-lg" x-text="students[activeStudent].name"></h4>
+                                    <p class="text-xs text-slate-500 font-semibold" x-text="students[activeStudent].city"></p>
+                                </div>
                             </div>
+                            <span class="bg-green-100 text-green-800 text-xs font-extrabold px-3 py-1 rounded-full" x-text="students[activeStudent].package"></span>
                         </div>
-                        <p class="text-sm font-bold text-slate-900">SAP FICO Consultant, TCS</p>
-                        <p class="mt-1 text-sm font-extrabold text-primary-600">&#8377;6.2L package</p>
-                        <p class="mt-3 text-xs leading-relaxed text-slate-600">
-                            &quot;Got placed at TCS as SAP FICO Consultant with &#8377;6.2L package within 40 days of completing the course.&quot; &mdash; Priya K., Hyderabad
-                        </p>
-                    </article>
 
-                    <article class="bg-white p-4 rounded-xl shadow-soft border border-slate-100">
-                        <div class="flex items-center gap-3 mb-3">
-                            <img src="stu2.png" alt="Ravi Kumar" class="h-14 w-14 rounded-full object-cover">
-                            <div>
-                                <h4 class="font-display text-base font-bold text-dark">Ravi Kumar</h4>
-                                <p class="text-xs font-semibold text-slate-500">Hyderabad</p>
-                            </div>
+                        <div class="mb-3">
+                            <span class="text-xs font-bold text-slate-900 bg-slate-100 px-2.5 py-1 rounded-md" x-text="students[activeStudent].role + ' • ' + students[activeStudent].company"></span>
                         </div>
-                        <p class="text-sm font-bold text-slate-900">SAP FICO Associate, Infosys</p>
-                        <p class="mt-1 text-sm font-extrabold text-primary-600">&#8377;7L package</p>
-                        <p class="mt-3 text-xs leading-relaxed text-slate-600">
-                            &quot;The interview preparation and practical FICO project practice helped me clear my first SAP role.&quot;
-                        </p>
-                    </article>
 
-                    <article class="bg-white p-4 rounded-xl shadow-soft border border-slate-100">
-                        <div class="flex items-center gap-3 mb-3">
-                            <img src="stu3.png" alt="Arjun M." class="h-14 w-14 rounded-full object-cover">
-                            <div>
-                                <h4 class="font-display text-base font-bold text-dark">Arjun M.</h4>
-                                <p class="text-xs font-semibold text-slate-500">Bengaluru</p>
-                            </div>
-                        </div>
-                        <p class="text-sm font-bold text-slate-900">SAP Financial Analyst, Deloitte</p>
-                        <p class="mt-1 text-sm font-extrabold text-primary-600">&#8377;11.5L package</p>
-                        <p class="mt-3 text-xs leading-relaxed text-slate-600">
-                            &quot;Real-time financial scenarios made the course practical, and placement support kept me moving.&quot;
-                        </p>
-                    </article>
+                        <p class="text-slate-700 text-xs sm:text-sm leading-relaxed italic" x-text="'&ldquo;' + students[activeStudent].quote + '&rdquo;'"></p>
+                    </div>
 
-                    <article class="bg-white p-4 rounded-xl shadow-soft border border-slate-100">
-                        <div class="flex items-center gap-3 mb-3">
-                            <img src="stu4.png" alt="Sneha R." class="h-14 w-14 rounded-full object-cover">
-                            <div>
-                                <h4 class="font-display text-base font-bold text-dark">Sneha Reddy</h4>
-                                <p class="text-xs font-semibold text-slate-500">Pune</p>
-                            </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
+                        <span>Verified Manikonda Alumni</span>
+                        <div class="text-amber-400 flex gap-0.5">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="text-sm font-bold text-slate-900">SAP FICO Consultant, Capgemini</p>
-                        <p class="mt-1 text-sm font-extrabold text-primary-600">&#8377;8.0L package</p>
-                        <p class="mt-3 text-xs leading-relaxed text-slate-600">
-                            &quot;I joined as a fresher and got clear guidance from FICO basics to mock interviews.&quot;
-                        </p>
-                    </article>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- 8. WHY CHOOSE GLOBAL COACH MANIKONDA -->
-    <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <!-- 9. WHY CHOOSE GLOBAL COACH MANIKONDA (Square Container + Banner Illustration Header + Clean HTML Text) -->
+    <section class="py-8 sm:py-12 bg-white border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="relative w-[115%] -ml-[7.5%] md:w-full md:ml-0 aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-card"
+            <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <!-- Award Image Box -->
+                <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-card"
                     x-data="{ activeSlide: 0, slides: ['award1.jpeg', 'award2.jpeg', 'award3.jpeg', 'photo3.jpeg', 'phot01.jpeg'] }"
                     x-init="setInterval(() => activeSlide = (activeSlide + 1) % slides.length, 3000)">
 
                     <template x-for="(slide, index) in slides" :key="index">
-                        <img :src="slide" alt="Global Coach Facility"
+                        <img :src="slide" alt="Global Coach Manikonda awards and recognition"
                             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
                             :class="activeSlide === index ? 'opacity-100 relative z-10' : 'opacity-0 absolute z-0'">
                     </template>
 
-                    <div class="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-dark/80 to-transparent z-20">
-                        <h4 class="text-white font-display font-bold text-2xl">Awards And Recognition</h4>
+                    <div class="absolute bottom-0 inset-x-0 p-4 sm:p-6 bg-gradient-to-t from-dark/90 to-transparent z-20">
+                        <h4 class="text-white font-display font-extrabold text-lg sm:text-xl">Awards And Recognition</h4>
                     </div>
                 </div>
 
+                <!-- Custom Cards Layout (Square Manner 2x2 Grid with Banner Graphic Top + Clean HTML Content Bottom) -->
                 <div>
-                    <h2 class="font-display text-3xl md:text-4xl font-bold text-dark mb-6" style="color:#00b5fe;">Why Choose Global Coach Manikonda?</h2>
+                    <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-dark mb-4" style="color:#00b5fe;">
+                        Why Choose Global Coach Manikonda?
+                    </h2>
 
-                    <div class="grid sm:grid-cols-2 gap-4 mb-8">
-                        <div class="bg-white border-2 border-slate-100 p-5 hover:border-primary-500 transition-colors shadow-sm">
-                            <img src="gra1.jpg" alt="10+ Years of Excellence" class="w-full h-32 object-contain mb-4">
-                            <h4 class="font-bold text-dark text-lg mb-2 leading-tight">10+ Years of Excellence</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed">Top-rated SAP FICO training academy at Manikonda branch.</p>
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
+                        <!-- Card 1 -->
+                        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-soft flex flex-col justify-between hover:shadow-md transition">
+                            <div class="bg-primary-50 p-2 sm:p-3 border-b border-slate-100 flex items-center justify-center h-28 sm:h-36">
+                                <img src="why_excellence.png" alt="10+ Years Excellence" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 sm:p-4 bg-white flex-1 flex flex-col justify-center">
+                                <h4 class="font-extrabold text-dark text-xs sm:text-sm mb-1">10+ Years Excellence</h4>
+                                <p class="text-slate-600 text-[11px] sm:text-xs leading-relaxed">Reputed training academy at Manikonda branch.</p>
+                            </div>
                         </div>
 
-                        <div class="bg-white border-2 border-slate-100 p-5 hover:border-primary-500 transition-colors shadow-sm">
-                            <img src="gra2.jpg" alt="5000+ Students Trained" class="w-full h-32 object-contain mb-4">
-                            <h4 class="font-bold text-dark text-lg mb-2 leading-tight">5000+ Students Trained</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed">Join a strong network of SAP professionals working in top MNCs.</p>
+                        <!-- Card 2 -->
+                        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-soft flex flex-col justify-between hover:shadow-md transition">
+                            <div class="bg-primary-50 p-2 sm:p-3 border-b border-slate-100 flex items-center justify-center h-28 sm:h-36">
+                                <img src="why_students_placed.png" alt="5000+ Placed" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 sm:p-4 bg-white flex-1 flex flex-col justify-center">
+                                <h4 class="font-extrabold text-dark text-xs sm:text-sm mb-1">5000+ Placed</h4>
+                                <p class="text-slate-600 text-[11px] sm:text-xs leading-relaxed">Network of placed SAP professionals.</p>
+                            </div>
                         </div>
 
-                        <div class="bg-white border-2 border-slate-100 p-5 hover:border-primary-500 transition-colors shadow-sm">
-                            <img src="gra3.jpg" alt="Certified Trainers" class="w-full h-32 object-contain mb-4">
-                            <h4 class="font-bold text-dark text-lg mb-2 leading-tight">Certified FICO Trainers</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed">Learn directly from real-time SAP FICO consultants with live project experience.</p>
+                        <!-- Card 3 -->
+                        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-soft flex flex-col justify-between hover:shadow-md transition">
+                            <div class="bg-primary-50 p-2 sm:p-3 border-b border-slate-100 flex items-center justify-center h-28 sm:h-36">
+                                <img src="why_certified_trainers.png" alt="Certified FICO Trainers" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 sm:p-4 bg-white flex-1 flex flex-col justify-center">
+                                <h4 class="font-extrabold text-dark text-xs sm:text-sm mb-1">Certified FICO Trainers</h4>
+                                <p class="text-slate-600 text-[11px] sm:text-xs leading-relaxed">Learn from real-time SAP practitioners.</p>
+                            </div>
                         </div>
 
-                        <div class="bg-white border-2 border-slate-100 p-5 hover:border-primary-500 transition-colors shadow-sm">
-                            <img src="gra4.jpg" alt="Free repeat classes" class="w-full h-32 object-contain mb-4">
-                            <h4 class="font-bold text-dark text-lg mb-2 leading-tight">Free Repeat Classes</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed">Attend additional sessions or revise complex FICO topics whenever needed.</p>
+                        <!-- Card 4 -->
+                        <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-soft flex flex-col justify-between hover:shadow-md transition">
+                            <div class="bg-primary-50 p-2 sm:p-3 border-b border-slate-100 flex items-center justify-center h-28 sm:h-36">
+                                <img src="why_repeat_classes.png" alt="Free Repeat Classes" class="w-full h-full object-contain">
+                            </div>
+                            <div class="p-3 sm:p-4 bg-white flex-1 flex flex-col justify-center">
+                                <h4 class="font-extrabold text-dark text-xs sm:text-sm mb-1">Free Repeat Classes</h4>
+                                <p class="text-slate-600 text-[11px] sm:text-xs leading-relaxed">Revise FICO topics at branch for free.</p>
+                            </div>
                         </div>
                     </div>
 
                     <button type="button" @click="document.body.dataset.pendingDownloadUrl = 'sap.pdf'; showModal = true"
-                        class="text-primary-600 font-semibold hover:text-primary-700 flex items-center gap-2 transition ml-4">
-                        <i class="fa-solid fa-file-pdf text-xl"></i> Click here to download SAP FICO course syllabus
+                        class="w-full sm:w-auto bg-primary-50 text-primary-700 border border-primary-200 font-extrabold px-4 py-2.5 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-file-pdf text-red-500 text-base"></i> Download SAP FICO Course Syllabus PDF
                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 9. MID-PAGE DEMO FORM -->
-    <section class="py-10 bg-white border-y border-slate-200">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-                <div>
-                    <h2 class="font-display text-2xl md:text-3xl font-bold leading-tight text-dark" style="color:#00b5fe;">
-                        Ready for SAP FICO Training at Manikonda?
-                    </h2>
-                    <p class="mt-3 text-slate-600 font-medium">
-                        Book your free demo or branch counseling without scrolling back to top.
+    <!-- 10. MID-PAGE FORM -->
+    <section class="py-8 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="bg-white p-5 sm:p-8 rounded-2xl border border-slate-200 shadow-soft">
+                <div class="text-center mb-5">
+                    <h3 class="font-display text-xl sm:text-2xl font-extrabold text-dark" style="color:#00b5fe;">
+                        Ready to Visit Manikonda Branch for FICO Training?
+                    </h3>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-1">
+                        Book your free demo or offline branch counseling session instantly.
                     </p>
                 </div>
 
-                <form class="contact-form lead-flow-form grid gap-4 rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-soft sm:grid-cols-2"
+                <form class="contact-form lead-flow-form grid gap-3 sm:grid-cols-2"
                     action="https://script.google.com/macros/s/AKfycbzBl_a4ratMgU-fQrBxxTf7xIbSgmCbWPEHWXtZEdMGJe_2g0X3lQ9q55k2BKnaYGQ/exec"
                     method="POST">
                     <input type="hidden" name="Source" value="Manikonda Branch Page - SAP FICO Middle Form">
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-1">Name</label>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Full Name</label>
                         <input type="text" name="Name" placeholder="Your Name" required
-                            class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 text-sm text-slate-800 placeholder:text-slate-400">
+                            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:bg-white text-sm text-slate-800">
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-1">Phone / WhatsApp</label>
-                        <input type="tel" name="Mobile" placeholder="Phone / WhatsApp" inputmode="numeric"
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Phone / WhatsApp</label>
+                        <input type="tel" name="Mobile" placeholder="10-digit Phone" inputmode="numeric"
                             autocomplete="tel" required minlength="10" maxlength="10" pattern="[0-9]{10}"
-                            title="Enter exactly 10 digits"
-                            class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 text-sm text-slate-800 placeholder:text-slate-400">
+                            title="Enter 10 digits"
+                            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl focus:bg-white text-sm text-slate-800">
                     </div>
-                    <p class="sm:col-span-2 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-center text-sm font-bold text-amber-800">
-                        Manikonda next FICO batch starts soon &mdash; Only 4 seats remaining. Book your free demo now.
-                    </p>
                     <button type="submit"
-                        class="sm:col-span-2 bg-primary-600 hover:bg-primary-700 text-white py-3.5 rounded-lg font-bold shadow-lg shadow-primary-600/20 transition-all flex justify-center items-center gap-2">
-                        Get My Free FICO Demo Now <i class="fa-solid fa-arrow-right text-sm"></i>
+                        class="sm:col-span-2 bg-primary-600 hover:bg-primary-700 text-white font-extrabold py-3.5 rounded-xl shadow-md transition text-sm flex justify-center items-center gap-2">
+                        Get My Free FICO Demo Now <i class="fa-solid fa-arrow-right text-xs"></i>
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- 10. FAQs -->
-    <section class="py-12 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="font-display text-3xl font-bold text-dark" style="color:#00b5fe;">Frequently Asked Questions (SAP FICO)</h2>
+    <!-- 11. FAQs -->
+    <section class="py-8 sm:py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-6 sm:mb-8">
+                <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-dark" style="color:#00b5fe;">
+                    Frequently Asked Questions (SAP FICO)
+                </h2>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto items-start">
-                <div class="rounded-2xl overflow-hidden max-w-[280px] sm:max-w-sm lg:max-w-none mx-auto lg:mx-0">
-                    <img src="dcheck.png" alt="Have Doubts?"
-                        class="w-full max-h-[260px] sm:max-h-[320px] lg:max-h-[400px] object-contain object-center">
+            <div class="space-y-3" x-data="{ selected: null }">
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+                    <button @click="selected !== 1 ? selected = 1 : selected = null"
+                        class="w-full text-left px-4 py-3.5 flex justify-between items-center transition font-bold text-xs sm:text-sm text-dark">
+                        Do you provide SAP FICO placement assistance?
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300 text-xs"
+                            :class="selected === 1 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="selected === 1" x-collapse>
+                        <div class="px-4 py-3 bg-white text-slate-600 text-xs sm:text-sm border-t border-slate-200 leading-relaxed">
+                            Yes, 100% placement support is included. We provide FICO resume building, conduct mock interviews, share your profile with hiring partners, and arrange interviews until you get placed.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="space-y-4" x-data="{ selected: null }">
-                    <div class="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
-                        <button @click="selected !== 1 ? selected = 1 : selected = null"
-                            class="w-full text-left px-6 py-4 hover:bg-slate-50 flex justify-between items-center transition font-semibold text-dark">
-                            Do you provide SAP FICO placement assistance?
-                            <i class="fa-solid fa-chevron-down transition-transform duration-300"
-                                :class="selected === 1 ? 'rotate-180' : ''"></i>
-                        </button>
-                        <div x-show="selected === 1" x-collapse>
-                            <div class="px-6 py-4 bg-white text-slate-600 border-t border-slate-200 leading-relaxed">
-                                Yes, 100% placement support is included. We provide FICO resume building, conduct mock interviews, share your profile with hiring partners, and arrange interviews until you get placed.
-                            </div>
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+                    <button @click="selected !== 2 ? selected = 2 : selected = null"
+                        class="w-full text-left px-4 py-3.5 flex justify-between items-center transition font-bold text-xs sm:text-sm text-dark">
+                        What is the SAP FICO course duration?
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300 text-xs"
+                            :class="selected === 2 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="selected === 2" x-collapse>
+                        <div class="px-4 py-3 bg-white text-slate-600 text-xs sm:text-sm border-t border-slate-200 leading-relaxed">
+                            The SAP FICO course is structured over 90 days with 120+ hours of live training and 24x7 server practice access.
                         </div>
                     </div>
+                </div>
 
-                    <div class="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
-                        <button @click="selected !== 2 ? selected = 2 : selected = null"
-                            class="w-full text-left px-6 py-4 hover:bg-slate-50 flex justify-between items-center transition font-semibold text-dark">
-                            What is the SAP FICO course duration?
-                            <i class="fa-solid fa-chevron-down transition-transform duration-300"
-                                :class="selected === 2 ? 'rotate-180' : ''"></i>
-                        </button>
-                        <div x-show="selected === 2" x-collapse>
-                            <div class="px-6 py-4 bg-white text-slate-600 border-t border-slate-200 leading-relaxed">
-                                The SAP FICO course is structured over 90 days with 120+ hours of live training and 24x7 server practice access.
-                            </div>
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+                    <button @click="selected !== 3 ? selected = 3 : selected = null"
+                        class="w-full text-left px-4 py-3.5 flex justify-between items-center transition font-bold text-xs sm:text-sm text-dark">
+                        Who can learn SAP FICO?
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300 text-xs"
+                            :class="selected === 3 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="selected === 3" x-collapse>
+                        <div class="px-4 py-3 bg-white text-slate-600 text-xs sm:text-sm border-t border-slate-200 leading-relaxed">
+                            Finance graduates (B.Com, M.Com, MBA Finance, CA/ICWA inters) as well as working accounting professionals and career switchers can learn SAP FICO.
                         </div>
                     </div>
+                </div>
 
-                    <div class="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
-                        <button @click="selected !== 3 ? selected = 3 : selected = null"
-                            class="w-full text-left px-6 py-4 hover:bg-slate-50 flex justify-between items-center transition font-semibold text-dark">
-                            Who can learn SAP FICO?
-                            <i class="fa-solid fa-chevron-down transition-transform duration-300"
-                                :class="selected === 4 ? 'rotate-180' : ''"></i>
-                        </button>
-                        <div x-show="selected === 3" x-collapse>
-                            <div class="px-6 py-4 bg-white text-slate-600 border-t border-slate-200 leading-relaxed">
-                                Finance graduates (B.Com, M.Com, MBA Finance, CA/ICWA inters) as well as working accounting professionals and career switchers can learn SAP FICO.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
-                        <button @click="selected !== 4 ? selected = 4 : selected = null"
-                            class="w-full text-left px-6 py-4 hover:bg-slate-50 flex justify-between items-center transition font-semibold text-dark">
-                            Are classes online or offline at Manikonda?
-                            <i class="fa-solid fa-chevron-down transition-transform duration-300"
-                                :class="selected === 4 ? 'rotate-180' : ''"></i>
-                        </button>
-                        <div x-show="selected === 4" x-collapse>
-                            <div class="px-6 py-4 bg-white text-slate-600 border-t border-slate-200 leading-relaxed">
-                                We offer both classroom offline training at Manikonda branch and live online instructor-led batches.
-                            </div>
+                <div class="border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+                    <button @click="selected !== 4 ? selected = 4 : selected = null"
+                        class="w-full text-left px-4 py-3.5 flex justify-between items-center transition font-bold text-xs sm:text-sm text-dark">
+                        Are classes online or offline at Manikonda?
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300 text-xs"
+                            :class="selected === 4 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="selected === 4" x-collapse>
+                        <div class="px-4 py-3 bg-white text-slate-600 text-xs sm:text-sm border-t border-slate-200 leading-relaxed">
+                            We offer both classroom offline training at Manikonda branch and live online instructor-led batches.
                         </div>
                     </div>
                 </div>
@@ -595,107 +684,71 @@
         </div>
     </section>
 
-    <!-- 11. RE-ENGAGEMENT BANNER -->
-    <section class="py-10 bg-primary-600 relative overflow-hidden">
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-white/10 rounded-full blur-2xl"></div>
-        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-                <div class="relative max-w-[240px] sm:max-w-[300px] lg:max-w-none mx-auto lg:mx-0">
-                    <img src="cta.png" alt="Call to Action"
-                        class="w-full max-w-[400px] mx-auto max-h-[230px] sm:max-h-[300px] lg:max-h-[400px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="text-center lg:text-left">
-                    <h2 class="font-display text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                        Manikonda FICO batch admissions are open now!
-                    </h2>
-                    <p class="text-primary-100 text-base mb-6 max-w-xl mx-auto lg:mx-0">
-                        Visit us at Hospital Lane, beside EIPL Cornor Stone, or schedule a 1-on-1 FICO counseling session.
-                    </p>
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-4 mt-2">
-                        <a href="tel:+918790532776"
-                            class="bg-white text-primary-600 hover:bg-slate-50 px-8 py-3 rounded-xl font-bold text-lg shadow-xl shadow-dark/10 transition-transform transform hover:-translate-y-1 flex items-center gap-2">
-                            <i class="fa-solid fa-phone"></i> Call Now
-                        </a>
-                        <button @click="document.body.dataset.pendingDownloadUrl = ''; showModal = true"
-                            class="bg-primary-600 text-white hover:bg-primary-700 px-8 py-3 rounded-xl font-bold text-lg shadow-xl shadow-dark/10 transition-transform transform hover:-translate-y-1 flex items-center gap-2">
-                            <i class="fa-solid fa-calendar"></i> Book Free Demo
-                        </button>
-                    </div>
-                </div>
+    <!-- 12. RE-ENGAGEMENT BANNER -->
+    <section class="py-8 bg-primary-600 text-white">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="font-display text-2xl sm:text-3xl font-extrabold mb-2">
+                Manikonda FICO Admissions Open Now!
+            </h2>
+            <p class="text-primary-100 text-xs sm:text-sm mb-5 max-w-xl mx-auto">
+                Visit us at Hospital Lane, beside EIPL Cornor Stone, or schedule a 1-on-1 FICO counseling session.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="tel:+918790532776"
+                    class="bg-white text-primary-600 px-6 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Call Now
+                </a>
+                <button @click="document.body.dataset.pendingDownloadUrl = ''; showModal = true"
+                    class="bg-dark text-white px-6 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-calendar"></i> Book Free Demo
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- 12. FOOTER -->
-    <footer class="bg-dark text-slate-300 pt-16 pb-8 border-t border-slate-800">
+    <!-- 13. FOOTER -->
+    <footer class="bg-dark text-slate-300 py-10 border-t border-slate-800 text-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-12 gap-8 lg:gap-12 mb-12">
+            <div class="grid md:grid-cols-12 gap-6 mb-8">
                 <div class="md:col-span-5">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="bg-white p-1 rounded-lg">
-                            <img src="logo.png" alt="Global Coach Logo" class="h-14 w-auto">
-                        </div>
-                    </div>
-                    <p class="text-sm leading-relaxed mb-6 max-w-sm">
+                    <img src="logo.png" alt="Global Coach Logo" class="h-12 w-auto bg-white p-1 rounded-lg mb-4">
+                    <p class="leading-relaxed text-slate-400 max-w-sm">
                         Global Coach IT Academy Manikonda branch offers SAP FICO training, practical projects, placement assistance, and free demo counseling in Hyderabad.
                     </p>
                 </div>
 
                 <div class="md:col-span-7">
-                    <h4 class="text-white font-bold text-lg mb-6 border-b border-slate-700 pb-2">Manikonda Branch</h4>
-                    <div class="grid sm:grid-cols-3 gap-6">
-                        <div>
-                            <h5 class="font-semibold text-primary-400 mb-2">Address</h5>
-                            <p class="text-sm leading-relaxed">Hospital Lane, beside EIPL Cornor Stone, Kyettaian Gouda Nilayam, Alkapoor, Bhoomi, Hyderabad, Telangana 500089</p>
-                        </div>
-                        <div>
-                            <h5 class="font-semibold text-primary-400 mb-2">Landmark</h5>
-                            <p class="text-sm leading-relaxed">Beside EIPL Cornor Stone, Alkapoor, Hyderabad.</p>
-                        </div>
-                        <div>
-                            <h5 class="font-semibold text-primary-400 mb-2">Call Manikonda</h5>
-                            <a href="tel:+918790532776" class="flex items-center gap-2 text-sm hover:text-white transition">
-                                <i class="fa-solid fa-phone text-xs"></i> +91 87905 32776
-                            </a>
-                        </div>
-                    </div>
+                    <h4 class="text-white font-bold text-sm mb-3 border-b border-slate-700 pb-2">Manikonda Branch</h4>
+                    <p class="leading-relaxed text-slate-300 mb-2">
+                        <strong>Address:</strong> Hospital Lane, beside EIPL Cornor Stone, Kyettaian Gouda Nilayam, Alkapoor, Bhoomi, Hyderabad, Telangana 500089
+                    </p>
+                    <p class="text-primary-400 font-bold">
+                        <i class="fa-solid fa-phone"></i> Direct Branch Phone: +91 87905 32776
+                    </p>
                 </div>
             </div>
 
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-500 pb-16 md:pb-0">
+            <div class="border-t border-slate-800 pt-6 text-center text-slate-500">
                 <p>&copy; 2026 Global Coach IT Academy. All rights reserved.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition">Terms of Service</a>
-                </div>
             </div>
         </div>
     </footer>
 
-    <!-- MOBILE STICKY CTA -->
-    <div class="mobile-sticky-cta md:hidden fixed bottom-0 inset-x-0 bg-white border-t border-slate-200 shadow-[0_-10px_24px_rgba(15,23,42,0.10)] z-50 flex">
-        <a href="tel:+918790532776"
-            class="mobile-sticky-button flex-1 bg-white text-primary-600 hover:bg-slate-50 flex justify-center items-center font-semibold shadow-sm gap-2 border border-primary-200">
-            <i class="fa-solid fa-phone"></i> Call Now
-        </a>
-        <button @click="document.body.dataset.pendingDownloadUrl = ''; showModal = true"
-            class="mobile-sticky-button flex-1 bg-primary-600 text-white hover:bg-primary-700 flex justify-center items-center font-semibold shadow-sm gap-2 border border-primary-600">
-            <i class="fa-solid fa-calendar"></i> Book Demo
-        </button>
-    </div>
-
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <div class="fixed right-4 bottom-24 z-50 flex flex-col items-end gap-3 md:bottom-6 lg:right-6">
+    <!-- DUAL FLOATING ACTION BUTTONS -->
+    <div class="fixed right-4 bottom-5 z-50 flex flex-col items-end gap-2.5">
         <a href="https://wa.me/918790532776" target="_blank" rel="noopener" aria-label="WhatsApp Manikonda branch"
-            title="WhatsApp Manikonda branch"
-            class="h-14 px-5 rounded-full bg-green-500 text-white shadow-2xl shadow-green-500/30 transition-transform hover:-translate-y-1 hover:bg-green-600 flex items-center justify-center gap-3 font-semibold whitespace-nowrap">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+            class="h-12 px-4 rounded-full bg-green-500 text-white shadow-2xl transition-transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 font-extrabold text-xs">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
             </svg>
-            <span>Chat on WhatsApp</span>
+            <span>WhatsApp Us</span>
         </a>
+
+        <button @click="document.body.dataset.pendingDownloadUrl = ''; showModal = true"
+            class="h-12 px-4 rounded-full bg-primary-600 hover:bg-primary-700 text-white shadow-2xl transition-transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 font-extrabold text-xs">
+            <i class="fa-solid fa-calendar-check text-sm"></i>
+            <span>Book Free Demo</span>
+        </button>
     </div>
 
     <!-- MODAL FORM -->
@@ -706,55 +759,52 @@
             class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"></div>
 
         <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <div class="flex min-h-full items-center justify-center p-3 text-center sm:p-0">
                 <div x-show="showModal" @click.away="showModal = false; document.body.dataset.pendingDownloadUrl = ''" x-transition:enter="ease-out duration-300"
-                    x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    x-transition:enter-start="opacity-0 translate-y-4 sm:scale-95"
                     x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
                     x-transition:leave="ease-in duration-200"
                     x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
-                    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    x-transition:leave-end="opacity-0 translate-y-4 sm:scale-95"
                     class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-md border border-slate-100">
 
                     <button @click="showModal = false; document.body.dataset.pendingDownloadUrl = ''"
-                        class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 transition">
+                        class="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 transition">
                         <i class="fa-solid fa-times"></i>
                     </button>
 
-                    <div class="px-6 py-8">
-                        <div class="text-center mb-6">
-                            <h3 class="font-display text-2xl font-bold text-dark mb-2" id="modal-title"
+                    <div class="p-5 sm:p-6">
+                        <div class="text-center mb-4">
+                            <h3 class="font-display text-xl sm:text-2xl font-extrabold text-dark mb-1" id="modal-title"
                                 x-text="showModal && document.body.dataset.pendingDownloadUrl ? 'Download SAP FICO Syllabus' : 'Book a Free FICO Demo at Manikonda'" style="color:#00b5fe;">
                                 Book a Free FICO Demo at Manikonda</h3>
-                            <p class="text-slate-500 text-sm"
-                                x-text="showModal && document.body.dataset.pendingDownloadUrl ? 'Share two details and the PDF will download instantly.' : 'Share two details and our Manikonda counselor will schedule your demo.'">
-                                Share two details and our Manikonda counselor will schedule your demo.</p>
+                            <p class="text-slate-500 text-xs sm:text-sm"
+                                x-text="showModal && document.body.dataset.pendingDownloadUrl ? 'Share two details and the PDF will download instantly.' : 'Share two details and our counselor will schedule your demo.'">
+                                Share two details and our counselor will schedule your demo.</p>
                         </div>
 
-                        <form class="contact-form lead-flow-form space-y-4"
+                        <form class="contact-form lead-flow-form space-y-3"
                             action="https://script.google.com/macros/s/AKfycbzBl_a4ratMgU-fQrBxxTf7xIbSgmCbWPEHWXtZEdMGJe_2g0X3lQ9q55k2BKnaYGQ/exec"
                             method="POST">
                             <input type="hidden" name="Source" value="Manikonda Branch Page - SAP FICO Modal Form">
                             <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-1">Name</label>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Name</label>
                                 <input type="text" name="Name" required
-                                    class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition"
+                                    class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white text-sm text-slate-800"
                                     placeholder="Your Name">
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-slate-700 mb-1">Phone / WhatsApp</label>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Phone / WhatsApp</label>
                                 <input type="tel" name="Mobile" inputmode="numeric" autocomplete="tel" required
                                     minlength="10" maxlength="10" pattern="[0-9]{10}"
                                     title="Enter exactly 10 digits"
-                                    class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition"
+                                    class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 focus:bg-white text-sm text-slate-800"
                                     placeholder="Phone / WhatsApp">
                             </div>
-                            <p class="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-center text-sm font-bold text-amber-800">
-                                Manikonda next FICO batch starts soon &mdash; Only 4 seats remaining. Book your free demo now.
-                            </p>
                             <button type="submit"
-                                class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3.5 rounded-lg font-semibold shadow-lg shadow-primary-600/20 transition-all flex justify-center items-center gap-2">
+                                class="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-xl font-bold shadow-md transition text-sm flex justify-center items-center gap-2">
                                 <span x-text="showModal && document.body.dataset.pendingDownloadUrl ? 'Download Syllabus' : 'Get My Free Demo Now'">Get My Free Demo Now</span>
-                                <i class="fa-solid fa-check"></i>
+                                <i class="fa-solid fa-check text-xs"></i>
                             </button>
                         </form>
                     </div>
